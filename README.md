@@ -65,7 +65,7 @@ BajajFinservHealthApp/
 ├── pom.xml                                                          # Maven dependencies and build config
 ├── README.md                                                        # Project documentation
 ├── LICENSE                                                          # Project license
-└── Dockerfile                                                       # Docker containerization
+#└── Dockerfile                                                       # Docker containerization
 
 ## SQL Question
 There are three tables: -
