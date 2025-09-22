@@ -5,29 +5,67 @@ This Spring Boot application:
 - Solves SQL Question 2 (younger employee count)
 - Posts the solution (final SQL query) to the webhook using JWT Authorization.
 
-- BajajFinservHealthApp/
- ├── src/main/java/
- │    └── com.bajajfinserv.health/
- │         ├── BajajFinservHealthAppApplication.java    # Main class (Spring Boot starter)
- │         ├── config/
- │         │     └── WebClientConfig.java               # WebClient/RestTemplate Bean
- │         ├── dto/
- │         │     ├── WebhookRequest.java                # Request body POJO
- │         │     ├── WebhookResponse.java               # Response POJO
- │         │     └── SubmissionRequest.java             # Final submission request POJO
- │         ├── service/
- │         │     ├── WebhookService.java                # Handles calling first API
- │         │     ├── SQLSolverService.java              # Solve SQL query (logic)
- │         │     └── SubmissionService.java             # Sends answer back to webhook
- │         └── runner/
- │               └── AppStartupRunner.java              # Runs flow at startup
- │
- ├── src/main/resources/
- │    ├── application.properties                        # Configurations
- │    └── logback-spring.xml                            # Logging (optional)
- │
- ├── pom.xml                                            # Dependencies
- └── README.md                                          # Documentation
+BajajFinservHealthApp/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── bajajfinserv/
+│   │   │           └── health/
+│   │   │               ├── BajajFinservHealthAppApplication.java    # Main Spring Boot application class
+│   │   │               ├── config/
+│   │   │               │   ├── WebClientConfig.java                 # WebClient configuration
+│   │   │               │   └── AppConfig.java                       # Additional application configurations
+│   │   │               ├── controller/
+│   │   │               │   ├── WebhookController.java               # REST controller for webhook endpoints
+│   │   │               │   └── HealthController.java                # Health check and monitoring endpoints
+│   │   │               ├── dto/
+│   │   │               │   ├── WebhookRequest.java                  # Request body POJO for webhook
+│   │   │               │   ├── WebhookResponse.java                 # Response POJO for webhook
+│   │   │               │   ├── SubmissionRequest.java               # Final submission request POJO
+│   │   │               │   └── ApiResponse.java                     # Standard API response format
+│   │   │               ├── service/
+│   │   │               │   ├── WebhookService.java                  # Handles calling first API
+│   │   │               │   ├── SQLSolverService.java                # Solves SQL query logic
+│   │   │               │   ├── SubmissionService.java               # Sends answer back to webhook
+│   │   │               │   └── ValidationService.java               # Request validation service
+│   │   │               ├── repository/
+│   │   │               │   └── QueryRepository.java                 # Data access layer (if needed)
+│   │   │               ├── exception/
+│   │   │               │   ├── GlobalExceptionHandler.java          # Global exception handling
+│   │   │               │   ├── ApiException.java                    # Custom API exception
+│   │   │               │   └── ErrorResponse.java                   # Error response structure
+│   │   │               ├── util/
+│   │   │               │   ├── Constants.java                       # Application constants
+│   │   │               │   ├── SQLParser.java                       # SQL parsing utilities
+│   │   │               │   └── ResponseBuilder.java                 # Response building utilities
+│   │   │               └── runner/
+│   │   │                   └── AppStartupRunner.java                # Runs flow at startup (if needed)
+│   │   └── resources/
+│   │       ├── application.properties                               # Main application configuration
+│   │       ├── application-dev.properties                           # Development environment configuration
+│   │       ├── application-prod.properties                          # Production environment configuration
+│   │       ├── logback-spring.xml                                   # Logging configuration
+│   │       └── data/                                                # Sample data files (if any)
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── bajajfinserv/
+│                   └── health/
+│                       ├── BajajFinservHealthAppApplicationTests.java  # Main application tests
+│                       ├── controller/
+│                       │   └── WebhookControllerTest.java              # Controller tests
+│                       ├── service/
+│                       │   ├── WebhookServiceTest.java                 # Service tests
+│                       │   ├── SQLSolverServiceTest.java               # SQL solver tests
+│                       │   └── SubmissionServiceTest.java              # Submission service tests
+│                       └── util/
+│                           └── SQLParserTest.java                      # Utility tests
+├── .gitignore                                                       # Git ignore rules
+├── pom.xml                                                          # Maven dependencies and build config
+├── README.md                                                        # Project documentation
+├── LICENSE                                                          # Project license
+└── Dockerfile                                                       # Docker containerization
 
 ## SQL Question
 There are three tables: -
