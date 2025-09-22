@@ -4,6 +4,31 @@ This Spring Boot application:
 - Generates a webhook on startup
 - Solves SQL Question 2 (younger employee count)
 - Posts the solution (final SQL query) to the webhook using JWT Authorization.
+
+- BajajFinservHealthApp/
+ ├── src/main/java/
+ │    └── com.bajajfinserv.health/
+ │         ├── BajajFinservHealthAppApplication.java    # Main class (Spring Boot starter)
+ │         ├── config/
+ │         │     └── WebClientConfig.java               # WebClient/RestTemplate Bean
+ │         ├── dto/
+ │         │     ├── WebhookRequest.java                # Request body POJO
+ │         │     ├── WebhookResponse.java               # Response POJO
+ │         │     └── SubmissionRequest.java             # Final submission request POJO
+ │         ├── service/
+ │         │     ├── WebhookService.java                # Handles calling first API
+ │         │     ├── SQLSolverService.java              # Solve SQL query (logic)
+ │         │     └── SubmissionService.java             # Sends answer back to webhook
+ │         └── runner/
+ │               └── AppStartupRunner.java              # Runs flow at startup
+ │
+ ├── src/main/resources/
+ │    ├── application.properties                        # Configurations
+ │    └── logback-spring.xml                            # Logging (optional)
+ │
+ ├── pom.xml                                            # Dependencies
+ └── README.md                                          # Documentation
+
 ## SQL Question
 There are three tables: -
 1. DEPARTMENT: Contains details about the department.
