@@ -8,28 +8,27 @@ This Spring Boot application:
 ## BajajFinservHealthApp
 # BajajFinserv Health App - Project Structure
 
-# BajajFinservHealthApp/
-# ├── src/main/java/
-# │ └── com/bajajfinserv/health/
-# │ ├── BajajFinservHealthAppApplication.java # Main Spring Boot application class
-# │ ├── config/
-# │ │ └── WebClientConfig.java # WebClient/RestTemplate configuration
-# │ ├── dto/
-# │ │ ├── WebhookRequest.java # Webhook request POJO
-# │ │ ├── WebhookResponse.java # Webhook response POJO
-# │ │ └── SubmissionRequest.java # Final submission request POJO
-# │ ├── service/
-# │ │ ├── WebhookService.java # Handles first API call
-# │ │ ├── SQLSolverService.java # SQL query solving logic
-# │ │ └── SubmissionService.java # Sends answer back to webhook
-# │ └── runner/
-# │ └── AppStartupRunner.java # Application startup flow runner
-# ├── src/main/resources/
-# │ ├── application.properties # Spring Boot configurations
-# │ └── logback-spring.xml # Logging configuration (optional)
-# ├── pom.xml # Maven dependencies
-# └── README.md # Project documentation
-
+### BajajFinservHealthApp/
+### ├── src/main/java/
+### │ └── com/bajajfinserv/health/
+### │ ├── BajajFinservHealthAppApplication.java # Main Spring Boot application class
+### │ ├── config/
+### │ │ └── WebClientConfig.java # WebClient/RestTemplate configuration
+### │ ├── dto/
+### │ │ ├── WebhookRequest.java # Webhook request POJO
+### │ │ ├── WebhookResponse.java # Webhook response POJO
+### │ │ └── SubmissionRequest.java # Final submission request POJO
+### │ ├── service/
+### │ │ ├── WebhookService.java # Handles first API call
+### │ │ ├── SQLSolverService.java # SQL query solving logic
+### │ │ └── SubmissionService.java # Sends answer back to webhook
+### │ └── runner/
+### │ └── AppStartupRunner.java # Application startup flow runner
+### ├── src/main/resources/
+### │ ├── application.properties # Spring Boot configurations
+### │ └── logback-spring.xml # Logging configuration (optional)
+### ├── pom.xml # Maven dependencies
+### └── README.md # Project documentation
 
 ## Detailed File Descriptions
 
